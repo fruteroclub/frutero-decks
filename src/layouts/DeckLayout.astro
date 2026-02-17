@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const CTA_LINK = 'https://cal.com/troopdegen/lets-build-together?duration=20&overlayCalendar=true';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥭</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body class="min-h-screen">
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-white/5 no-print">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/" class="text-lg font-bold flex items-center gap-2">
+        <span>🥭</span>
+        <span class="text-mango">Frutero</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/partner" class="text-zinc-400 hover:text-mango transition-colors">Partner</a>
+        <a href="/ethereum" class="text-zinc-400 hover:text-mango transition-colors">Ethereum</a>
+        <a href="/devrel" class="text-zinc-400 hover:text-mango transition-colors">DevRel</a>
+        <a href={CTA_LINK} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-mango text-dark px-3 py-1.5 rounded-lg font-semibold text-sm hover:bg-mango-light transition-colors">
+          Let's Talk
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-14">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12 no-print">
+    <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
+      <div class="flex justify-center gap-6 text-sm text-zinc-500">
+        <a href="https://frutero.club" class="hover:text-mango transition-colors">frutero.club</a>
+        <span>•</span>
+        <a href="https://x.com/FruteroClub" class="hover:text-mango transition-colors">@FruteroClub</a>
+        <span>•</span>
+        <a href="mailto:mel@frutero.club" class="hover:text-mango transition-colors">mel@frutero.club</a>
+      </div>
+      <p class="text-zinc-600 text-xs">© 2025 Frutero. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
