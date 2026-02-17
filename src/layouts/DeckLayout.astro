@@ -18,21 +18,21 @@ const CTA_LINK = 'https://cal.com/troopdegen/lets-build-together?duration=20&ove
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥭</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Funnel+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen bg-background text-foreground">
   <!-- Nav -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-white/5 no-print">
-    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border no-print">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
       <a href="/" class="text-lg font-bold flex items-center gap-2">
         <span>🥭</span>
-        <span class="text-mango">Frutero</span>
+        <span class="text-primary font-[family-name:var(--font-heading)]">Frutero</span>
       </a>
       <div class="flex items-center gap-6 text-sm">
-        <a href="/partner" class="text-zinc-400 hover:text-mango transition-colors">Partner</a>
-        <a href="/ethereum" class="text-zinc-400 hover:text-mango transition-colors">Ethereum</a>
-        <a href="/devrel" class="text-zinc-400 hover:text-mango transition-colors">DevRel</a>
-        <a href={CTA_LINK} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-mango text-dark px-3 py-1.5 rounded-lg font-semibold text-sm hover:bg-mango-light transition-colors">
+        <a href="/partner" class="text-foreground/60 hover:text-primary transition-colors">Partner</a>
+        <a href="/ethereum" class="text-foreground/60 hover:text-primary transition-colors">Ethereum</a>
+        <a href="/devrel" class="text-foreground/60 hover:text-primary transition-colors">DevRel</a>
+        <a href={CTA_LINK} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-primary text-primary-fg px-4 py-1.5 rounded-full font-semibold text-sm hover:brightness-110 transition-all">
           Let's Talk
         </a>
       </div>
@@ -44,16 +44,16 @@ const CTA_LINK = 'https://cal.com/troopdegen/lets-build-together?duration=20&ove
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/5 py-12 no-print">
-    <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
-      <div class="flex justify-center gap-6 text-sm text-zinc-500">
-        <a href="https://frutero.club" class="hover:text-mango transition-colors">frutero.club</a>
+  <footer class="border-t border-border py-12 no-print">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
+      <div class="flex justify-center gap-6 text-sm text-foreground/40">
+        <a href="https://frutero.club" class="hover:text-primary transition-colors">frutero.club</a>
         <span>•</span>
-        <a href="https://x.com/FruteroClub" class="hover:text-mango transition-colors">@FruteroClub</a>
+        <a href="https://x.com/FruteroClub" class="hover:text-primary transition-colors">@FruteroClub</a>
         <span>•</span>
-        <a href="mailto:mel@frutero.club" class="hover:text-mango transition-colors">mel@frutero.club</a>
+        <a href="mailto:mel@frutero.club" class="hover:text-primary transition-colors">mel@frutero.club</a>
       </div>
-      <p class="text-zinc-600 text-xs">© 2025 Frutero. All rights reserved.</p>
+      <p class="text-foreground/30 text-xs">© 2025 Frutero. All rights reserved.</p>
     </div>
   </footer>
 </body>
