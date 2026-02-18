@@ -25,7 +25,7 @@ const { title, description, lang = 'es' } = Astro.props;
 <body class="min-h-screen bg-background text-foreground">
   <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 no-print">
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="/modelo-educativo/" class="flex items-center gap-2 font-heading font-bold text-lg text-foreground">
+      <a href="/modelo-educativo/" class="flex items-center gap-2 font-heading font-bold text-lg" style="color: var(--color-foreground) !important;">
         <span>🍊</span> Modelo Educativo
       </a>
       <div class="flex items-center gap-6 text-sm font-semibold">
@@ -43,12 +43,29 @@ const { title, description, lang = 'es' } = Astro.props;
   </main>
 
   <style>
+    /* Override global a { color: primary-dark } for nav and content */
+    nav a {
+      color: inherit;
+    }
+    nav a:hover {
+      color: inherit;
+    }
+    .modelo-nav-link {
+      color: oklch(0.0969 0 0 / 0.7) !important; /* foreground/70 */
+    }
+    .modelo-nav-link:hover {
+      color: var(--color-primary) !important;
+    }
     .modelo-nav-link.active {
-      color: var(--color-primary);
+      color: var(--color-primary) !important;
       text-decoration: underline;
       text-underline-offset: 6px;
       text-decoration-thickness: 2px;
       text-decoration-color: var(--color-primary);
+    }
+    /* CTA buttons: white text on primary bg */
+    .modelo-cta {
+      color: #ffffff !important;
     }
   </style>
 
