@@ -4,54 +4,64 @@ import '../styles/global.css';
 const CTA = 'https://cal.com/troopdegen/lets-build-together?duration=20&overlayCalendar=true';
 ---
 
-<DeckLayout title="Frutero — Sponsorship Decks" description="Premium partnership opportunities with LATAM's leading Impact Tech community">
+<DeckLayout title="Partnership Opportunities" description="Premium partnership opportunities with LATAM's leading Impact Tech community">
 
-<!-- Hero -->
-<section class="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+<!-- Hero with photo grid -->
+<section class="min-h-[90vh] flex items-center relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent"></div>
-  <div class="max-w-4xl mx-auto px-4 text-center space-y-8 relative z-10">
-    <img src="/images/logos/frutero-logo.svg" alt="Frutero" class="h-40 w-40 mx-auto mb-4" />
-    <h1 class="text-5xl sm:text-7xl font-medium tracking-tight">
-      <span class="text-primary">Frutero</span>
-    </h1>
-    <p class="text-xl sm:text-2xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-      LATAM's most active Impact Tech community.<br />
-      <span class="text-foreground/70 font-medium">1,000+ builders. 15+ countries. Real outcomes.</span>
-    </p>
-    <p class="text-lg text-foreground/50">Choose your partnership path ↓</p>
+  <div class="max-w-6xl mx-auto px-4 py-24 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-8">
+      <img src="/images/logos/frutero-logo.svg" alt="Frutero" class="h-28 w-auto" />
+      <h1 class="text-4xl leading-tight font-black text-foreground md:text-5xl lg:text-6xl">
+        Where LATAM<br />
+        <span class="inline-block -rotate-1 rounded-xl bg-primary px-4 py-2 text-primary-fg shadow-lg mt-2">builds.</span>
+      </h1>
+      <p class="text-xl text-foreground/70 max-w-lg leading-relaxed font-medium">
+        1,000+ builders. 15+ countries. Real outcomes.<br />
+        <span class="text-foreground font-bold">Choose your partnership path ↓</span>
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <img src="/images/hero/Ethereum_Mty-1-269.jpg" alt="Ethereum Monterrey event" class="rounded-2xl object-cover h-48 w-full shadow-lg" />
+      <img src="/images/hero/202401-ethcdm-hackerhouse-meetup.jpeg" alt="ETHCDM hacker house meetup" class="rounded-2xl object-cover h-48 w-full shadow-lg mt-6" />
+      <img src="/images/hero/mexi-20240204_102705.jpg" alt="Frutero builders" class="rounded-2xl object-cover h-48 w-full shadow-lg" />
+      <img src="/images/hero/202409-workshop-puebla-gvt.jpeg" alt="Workshop in Puebla" class="rounded-2xl object-cover h-48 w-full shadow-lg mt-6" />
+    </div>
   </div>
 </section>
 
 <!-- Decks Grid -->
-<section class="py-20 px-4">
-  <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+<section class="py-24 px-4">
+  <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
 
-    <!-- Partner Deck -->
-    <a href="/partner" class="group relative rounded-2xl border border-border bg-muted p-8 space-y-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative z-10">
-        <div class="text-4xl mb-4">🏠</div>
-        <h2 class="text-2xl font-bold text-foreground">Casa Frutero</h2>
-        <p class="text-primary font-semibold text-sm uppercase tracking-wider">Partner Deck</p>
-        <p class="text-foreground/60 mt-4 leading-relaxed">Sponsor LATAM's premier community hub in Mexico City. Four tiers from $250 to $1,750/mo.</p>
-        <p class="text-lg font-bold text-foreground mt-6 italic">"The builders are here. Are you?"</p>
-        <div class="mt-6 text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
-          View Deck →
+    <!-- Coworking Hub Deck -->
+    <a href="/partner" class="group relative rounded-2xl border-2 border-primary/20 bg-card overflow-hidden shadow-md hover:shadow-xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1">
+      <div class="h-48 overflow-hidden">
+        <img src="/images/hub/coworking-open-space.jpg" alt="Casa Frutero coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="p-8 space-y-4">
+        <div class="text-4xl">🏠</div>
+        <h2 class="text-2xl font-black text-foreground">Coworking Hub</h2>
+        <p class="text-foreground/70 leading-relaxed font-medium">Sponsor LATAM's premier community hub in Mexico City. Four tiers from $250 to $1,750/mo.</p>
+        <p class="text-lg font-black text-foreground italic">"The builders are here. Are you?"</p>
+        <div class="text-foreground font-bold text-sm group-hover:translate-x-1 transition-transform flex items-center gap-1">
+          View Deck <span class="text-primary">→</span>
         </div>
       </div>
     </a>
 
-    <!-- DevRel Deck -->
-    <a href="/devrel" class="group relative rounded-2xl border border-border bg-muted p-8 space-y-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative z-10">
-        <div class="text-4xl mb-4">🛠️</div>
-        <h2 class="text-2xl font-bold text-foreground">DevRel Services</h2>
-        <p class="text-primary font-semibold text-sm uppercase tracking-wider">DevRel-as-a-Service</p>
-        <p class="text-foreground/60 mt-4 leading-relaxed">The retention layer for Web3 protocols. Stop losing builders after hackathons.</p>
-        <p class="text-lg font-bold text-foreground mt-6 italic">"You activate builders. We make them stay."</p>
-        <div class="mt-6 text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
-          View Deck →
+    <!-- DevRel Services Deck -->
+    <a href="/devrel" class="group relative rounded-2xl border-2 border-primary/20 bg-card overflow-hidden shadow-md hover:shadow-xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1">
+      <div class="h-48 overflow-hidden">
+        <img src="/images/hero/Ethereum_Mty-1-269.jpg" alt="Ethereum event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="p-8 space-y-4">
+        <div class="text-4xl">🛠️</div>
+        <h2 class="text-2xl font-black text-foreground">DevRel Services</h2>
+        <p class="text-foreground/70 leading-relaxed font-medium">The retention layer for Web3 protocols. Stop losing builders after hackathons.</p>
+        <p class="text-lg font-black text-foreground italic">"You activate builders. We make them stay."</p>
+        <div class="text-foreground font-bold text-sm group-hover:translate-x-1 transition-transform flex items-center gap-1">
+          View Deck <span class="text-primary">→</span>
         </div>
       </div>
     </a>
@@ -60,33 +70,33 @@ const CTA = 'https://cal.com/troopdegen/lets-build-together?duration=20&overlayC
 </section>
 
 <!-- Stats Bar -->
-<section class="py-16 px-4 bg-muted border-y border-border/50">
+<section class="py-20 px-4 bg-muted">
   <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
     <div>
-      <div class="text-4xl font-medium text-primary">1,000+</div>
-      <div class="text-foreground/50 text-sm mt-1">Active Builders</div>
+      <div class="text-5xl font-black text-foreground">1,000+</div>
+      <div class="text-foreground/60 text-sm mt-2 font-medium">Active Builders</div>
     </div>
     <div>
-      <div class="text-4xl font-medium text-primary">15+</div>
-      <div class="text-foreground/50 text-sm mt-1">Countries</div>
+      <div class="text-5xl font-black text-foreground">15+</div>
+      <div class="text-foreground/60 text-sm mt-2 font-medium">Countries</div>
     </div>
     <div>
-      <div class="text-4xl font-medium text-primary">25+</div>
-      <div class="text-foreground/50 text-sm mt-1">Hackathon Wins</div>
+      <div class="text-5xl font-black text-foreground">25+</div>
+      <div class="text-foreground/60 text-sm mt-2 font-medium">Hackathon Wins</div>
     </div>
     <div>
-      <div class="text-4xl font-medium text-primary">70%+</div>
-      <div class="text-foreground/50 text-sm mt-1">Hackathon Success Rate</div>
+      <div class="text-5xl font-black text-foreground">70%+</div>
+      <div class="text-foreground/60 text-sm mt-2 font-medium">Success Rate</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-20 px-4 text-center cta-section">
-  <div class="max-w-2xl mx-auto space-y-6">
-    <h2 class="text-3xl sm:text-4xl font-medium text-foreground">Ready to reach LATAM's builders?</h2>
-    <p class="text-foreground/60 text-lg">Pick a deck above, or skip straight to the conversation.</p>
-    <a href={CTA} target="_blank" rel="noopener" class="inline-block bg-foreground text-background px-8 py-4 rounded-full font-bold text-lg hover:opacity-80 transition-all hover:scale-105 transform">
+<section class="py-24 px-4 text-center cta-section">
+  <div class="max-w-2xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-black text-foreground">Ready to reach LATAM's builders?</h2>
+    <p class="text-foreground/70 text-lg font-medium">Pick a deck above, or skip straight to the conversation.</p>
+    <a href={CTA} target="_blank" rel="noopener" class="inline-block bg-primary text-primary-fg px-10 py-5 rounded-full font-black text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-xl hover:scale-105 transform">
       Schedule a Call →
     </a>
   </div>
