@@ -1,0 +1,273 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+const months = ['m1', 'm2', 'm3', 'm4', 'm5'];
+const phaseColors: Record<string, string> = {
+  m1: 'border-green-500/30 bg-green-500/5',
+  m2: 'border-red-500/30 bg-red-500/5',
+  m3: 'border-red-500/30 bg-red-500/5',
+  m4: 'border-emerald-500/30 bg-emerald-500/5',
+  m5: 'border-amber-500/30 bg-amber-500/5',
+};
+---
+
+<!-- Hero -->
+<section class="min-h-[70vh] flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/5"></div>
+  <div class="max-w-5xl mx-auto px-4 py-24 relative z-10 text-center space-y-8">
+    <div class="inline-block text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-4 py-2 rounded-full">{t('modelo', lang, 'hero.badge')}</div>
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-foreground leading-tight">
+      {t('modelo', lang, 'hero.title')}
+    </h1>
+    <p class="text-2xl md:text-3xl text-foreground/70 font-medium">
+      {t('modelo', lang, 'hero.subtitle')}
+    </p>
+    <p class="text-lg text-foreground/50 max-w-2xl mx-auto leading-relaxed">
+      {t('modelo', lang, 'hero.description')}
+    </p>
+    <a href="#timeline" class="inline-block bg-foreground text-background px-10 py-5 rounded-full font-bold text-lg hover:opacity-80 transition-all hover:scale-105 transform shadow-lg">
+      {t('modelo', lang, 'hero.cta')}
+    </a>
+  </div>
+</section>
+
+<!-- Cycle Overview (visual phases bar) -->
+<section class="py-16 px-4 bg-muted">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'cycle.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'cycle.subtitle')}</p>
+    </div>
+    <!-- Phase bar -->
+    <div class="flex rounded-2xl overflow-hidden border border-primary/20 text-center font-bold text-sm">
+      <div class="flex-[1] py-6 bg-green-500/15 border-r border-primary/10">
+        <div class="text-2xl mb-1">🌱</div>
+        <div class="text-green-400">{t('modelo', lang, 'cycle.seed')}</div>
+        <div class="text-xs text-foreground/40 mt-1">Mes 1</div>
+      </div>
+      <div class="flex-[2] py-6 bg-red-500/10 border-r border-primary/10">
+        <div class="text-2xl mb-1">🍎</div>
+        <div class="text-red-400">{t('modelo', lang, 'cycle.feed')}</div>
+        <div class="text-xs text-foreground/40 mt-1">Mes 2-3</div>
+      </div>
+      <div class="flex-[1] py-6 bg-emerald-500/10 border-r border-primary/10">
+        <div class="text-2xl mb-1">🌿</div>
+        <div class="text-emerald-400">{t('modelo', lang, 'cycle.nurture')}</div>
+        <div class="text-xs text-foreground/40 mt-1">Mes 4</div>
+      </div>
+      <div class="flex-[2] py-6 bg-amber-500/10">
+        <div class="text-2xl mb-1">🌳</div>
+        <div class="text-amber-400">{t('modelo', lang, 'cycle.grow')}</div>
+        <div class="text-xs text-foreground/40 mt-1">Mes 5-6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-20 px-4" id="timeline">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'timeline.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'timeline.subtitle')}</p>
+    </div>
+
+    <div class="space-y-6">
+      {months.map((m) => (
+        <div class={`rounded-2xl border-2 p-6 sm:p-8 space-y-4 ${phaseColors[m]}`}>
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">{t('modelo', lang, `timeline.${m}.month`)}</span>
+            <h3 class="font-bold text-lg">{t('modelo', lang, `timeline.${m}.phase`)}</h3>
+          </div>
+          <div class="text-sm text-foreground/60 font-semibold">{t('modelo', lang, `timeline.${m}.program`)}</div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <div class="text-xs font-bold text-foreground/40 uppercase tracking-wider">⚙️ Operación</div>
+              <p class="text-sm text-foreground/70">{t('modelo', lang, `timeline.${m}.ops`)}</p>
+            </div>
+            <div class="space-y-2">
+              <div class="text-xs font-bold text-foreground/40 uppercase tracking-wider">📣 Campaña</div>
+              <p class="text-sm text-foreground/70">{t('modelo', lang, `timeline.${m}.campaign`)}</p>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <div class="text-xs font-bold text-foreground/40 uppercase tracking-wider">🎯 Adquisición</div>
+              <p class="text-sm text-foreground/70">{t('modelo', lang, `timeline.${m}.acquisition`)}</p>
+            </div>
+            <div class="space-y-2">
+              <div class="text-xs font-bold text-foreground/40 uppercase tracking-wider">💰 Revenue</div>
+              <p class="text-sm text-primary font-semibold">{t('modelo', lang, `timeline.${m}.revenue`)}</p>
+              <p class="text-xs text-foreground/50">Output: {t('modelo', lang, `timeline.${m}.output`)}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Campaign Strategy -->
+<section class="py-20 px-4 bg-muted" id="campaigns">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'campaigns.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'campaigns.subtitle')}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {['awareness', 'conversion', 'community', 'outcomes'].map((key) => (
+        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-3">
+          <h3 class="font-bold text-lg">{t('modelo', lang, `campaigns.${key}.title`)}</h3>
+          <p class="text-sm text-foreground/60">{t('modelo', lang, `campaigns.${key}.desc`)}</p>
+          <div>
+            <div class="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-1">Canales</div>
+            <p class="text-xs text-foreground/50">{t('modelo', lang, `campaigns.${key}.channels`)}</p>
+          </div>
+          <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">
+            KPI: {t('modelo', lang, `campaigns.${key}.kpi`)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Acquisition Funnel -->
+<section class="py-20 px-4" id="acquisition">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'acquisition.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'acquisition.subtitle')}</p>
+    </div>
+
+    <!-- Funnel visual -->
+    <div class="space-y-4 max-w-3xl mx-auto">
+      {['top', 'mid', 'bottom'].map((level, i) => {
+        const widths = ['w-full', 'w-4/5 mx-auto', 'w-3/5 mx-auto'];
+        const bgs = ['bg-green-500/10 border-green-500/30', 'bg-primary/10 border-primary/30', 'bg-amber-500/10 border-amber-500/30'];
+        return (
+          <div class={`${widths[i]} rounded-2xl border-2 ${bgs[i]} p-6 text-center space-y-2`}>
+            <div class="font-bold text-lg">{t('modelo', lang, `acquisition.${level}.title`)}</div>
+            <div class="text-3xl font-black text-primary">{t('modelo', lang, `acquisition.${level}.volume`)}</div>
+            <p class="text-sm text-foreground/60">{t('modelo', lang, `acquisition.${level}.channels`)}</p>
+            <div class="text-xs text-foreground/40">{t('modelo', lang, `acquisition.${level}.cost`)}</div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Flywheel note -->
+    <div class="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center max-w-3xl mx-auto">
+      <h3 class="font-bold text-lg mb-2">🔄 {t('modelo', lang, 'acquisition.flywheel.title')}</h3>
+      <p class="text-foreground/60">{t('modelo', lang, 'acquisition.flywheel.desc')}</p>
+    </div>
+
+    <!-- B2C vs B2B -->
+    <div class="text-center mt-8">
+      <h3 class="text-2xl font-medium">{t('modelo', lang, 'segments.title')}</h3>
+      <p class="text-foreground/50 mt-1">{t('modelo', lang, 'segments.subtitle')}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {['b2c', 'b2b'].map((seg) => (
+        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-3">
+          <h3 class="font-bold text-xl">{t('modelo', lang, `segments.${seg}.title`)}</h3>
+          <div>
+            <div class="text-xs font-bold text-foreground/40 uppercase">Quién</div>
+            <p class="text-sm text-foreground/60">{t('modelo', lang, `segments.${seg}.who`)}</p>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-foreground/40 uppercase">Cómo</div>
+            <p class="text-sm text-foreground/60">{t('modelo', lang, `segments.${seg}.how`)}</p>
+          </div>
+          <div class="flex gap-4">
+            <div>
+              <div class="text-xs font-bold text-foreground/40 uppercase">Precio</div>
+              <p class="text-sm text-primary font-semibold">{t('modelo', lang, `segments.${seg}.price`)}</p>
+            </div>
+          </div>
+          <p class="text-xs text-foreground/50 italic">{t('modelo', lang, `segments.${seg}.why`)}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Metrics -->
+<section class="py-20 px-4 bg-muted" id="metrics">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'metrics.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'metrics.subtitle')}</p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b border-border text-foreground/50">
+            <th class="py-3 pr-4">{t('modelo', lang, 'metrics.col.metric')}</th>
+            <th class="py-3 pr-4">{t('modelo', lang, 'metrics.col.target')}</th>
+            <th class="py-3">{t('modelo', lang, 'metrics.col.why')}</th>
+          </tr>
+        </thead>
+        <tbody class="text-foreground/60">
+          {[1,2,3,4,5,6,7,8,9].map((i) => (
+            <tr class={i < 9 ? 'border-b border-border/50' : ''}>
+              <td class="py-3 pr-4 font-semibold text-foreground">{t('modelo', lang, `metrics.row${i}.metric`)}</td>
+              <td class="py-3 pr-4 text-primary font-bold">{t('modelo', lang, `metrics.row${i}.target`)}</td>
+              <td class="py-3 text-foreground/50">{t('modelo', lang, `metrics.row${i}.why`)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Revenue -->
+<section class="py-20 px-4">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'revenue.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'revenue.subtitle')}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-5 gap-4">
+      {[1,2,3,4,5].map((i) => (
+        <div class="rounded-xl border border-primary/15 bg-card p-4 text-center space-y-2">
+          <p class="text-xs text-foreground/50">{t('modelo', lang, `revenue.r${i}.source`)}</p>
+          <p class="text-xl font-bold text-primary">{t('modelo', lang, `revenue.r${i}.amount`)}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="rounded-2xl border-2 border-primary/30 bg-primary/5 p-8 text-center">
+      <p class="text-foreground/50">{t('modelo', lang, 'revenue.total')}</p>
+      <p class="text-5xl font-black text-primary mt-2">{t('modelo', lang, 'revenue.range')}</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / Next Steps -->
+<section class="py-20 px-4 bg-muted">
+  <div class="max-w-3xl mx-auto space-y-8">
+    <h2 class="text-4xl font-medium text-center">{t('modelo', lang, 'cta.title')}</h2>
+    <div class="rounded-2xl border border-primary/20 bg-card p-8 space-y-4">
+      {[1,2,3,4,5].map((i) => (
+        <div class="flex gap-3 items-start text-foreground/70">
+          <span class="text-primary font-bold">{i}.</span>
+          <p>{t('modelo', lang, `cta.item${i}`)}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-center text-foreground/30 text-sm">{t('modelo', lang, 'cta.note')}</p>
+  </div>
+</section>

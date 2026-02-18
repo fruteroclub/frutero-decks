@@ -1,0 +1,51 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+
+const { title, description, lang = 'es' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/images/logos/frutero-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Funnel+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="min-h-screen bg-background text-foreground">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 no-print">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/modelo-educativo/" class="flex items-center gap-2 font-heading font-bold text-lg">
+        <span>🍊</span> Modelo Educativo
+      </a>
+      <div class="flex items-center gap-6 text-sm font-semibold">
+        <a href="#timeline" class="hidden sm:inline text-foreground/70 hover:text-foreground transition-colors">{t('modelo', lang, 'nav.timeline')}</a>
+        <a href="#campaigns" class="hidden sm:inline text-foreground/70 hover:text-foreground transition-colors">{t('modelo', lang, 'nav.campaigns')}</a>
+        <a href="#acquisition" class="hidden sm:inline text-foreground/70 hover:text-foreground transition-colors">{t('modelo', lang, 'nav.acquisition')}</a>
+        <a href="#metrics" class="hidden sm:inline text-foreground/70 hover:text-foreground transition-colors">{t('modelo', lang, 'nav.metrics')}</a>
+        <span class="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-bold uppercase tracking-wider">Interno</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+    <slot />
+  </main>
+
+  <footer class="border-t border-border/60 py-8 no-print">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p class="text-foreground/30 text-xs">{t('modelo', lang, 'footer.copyright')}</p>
+    </div>
+  </footer>
+</body>
+</html>

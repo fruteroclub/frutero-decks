@@ -1,0 +1,198 @@
+export default {
+  'meta.title': 'Modelo Educativo Frutero — Comunicación Interna',
+  'meta.description': 'Temporalidad, fases y estrategia de adquisición del Modelo Educativo Frutero.',
+
+  'nav.timeline': 'Timeline',
+  'nav.campaigns': 'Campañas',
+  'nav.acquisition': 'Adquisición',
+  'nav.metrics': 'Métricas',
+  'nav.cta': 'Siguiente Ciclo',
+
+  // Hero
+  'hero.title': 'Modelo Educativo Frutero',
+  'hero.subtitle': 'De la comunidad al producto — en 6 meses.',
+  'hero.description': 'Deck interno: temporalidad, fases, puntos estratégicos para campañas, adquisición de usuarios y clientes.',
+  'hero.cta': 'Ver Timeline ↓',
+  'hero.badge': 'COMUNICACIÓN INTERNA',
+
+  // Cycle Overview
+  'cycle.title': 'Ciclo de 6 Meses',
+  'cycle.subtitle': '2 ciclos al año. Cada uno produce builders, proyectos y revenue.',
+  'cycle.seed': 'SEED',
+  'cycle.feed': 'FEED',
+  'cycle.nurture': 'NURTURE',
+  'cycle.grow': 'GROW',
+
+  // Timeline
+  'timeline.title': 'Timeline Mes a Mes',
+  'timeline.subtitle': 'Cada mes tiene un foco operativo, una campaña y un trigger de adquisición.',
+
+  'timeline.m1.month': 'MES 1',
+  'timeline.m1.phase': '🌱 SEED — Captación',
+  'timeline.m1.program': 'Frutero Programming',
+  'timeline.m1.ops': 'Workshops abiertos semanales. Contenido on-demand. Retos comunitarios. Office hours con mentores.',
+  'timeline.m1.campaign': '🎯 Campaña "Abre los ojos" — awareness masivo. Ads en redes: "¿Vas a esperar a que la IA te reemplace?" Partnerships con universidades para workshops gratis en campus.',
+  'timeline.m1.acquisition': 'Orgánico + paid social. Universidades partner. Referrals de alumni de ciclos anteriores. Meta: 500+ personas expuestas.',
+  'timeline.m1.output': 'Comunidad activa. Base de leads calificados para bootcamp.',
+  'timeline.m1.revenue': 'Sponsorships de workshops ($5K-$50K)',
+
+  'timeline.m2.month': 'MES 2',
+  'timeline.m2.phase': '🍎 FEED — Bootcamp',
+  'timeline.m2.program': 'Vibe Coding Bootcamp (2 semanas + capstone)',
+  'timeline.m2.ops': 'Formación intensiva. Cada participante construye y despliega una app real. Sesiones diarias + proyecto final.',
+  'timeline.m2.campaign': '🎯 Campaña "Construye tu primera app con IA" — conversión. Testimonios de ciclos anteriores. Countdown al cierre de inscripciones. Early bird pricing.',
+  'timeline.m2.acquisition': 'Conversión de leads de Mes 1. Email drip. Webinar demo pre-bootcamp. Partnerships corporativos para becas. Meta: 30-50 inscritos.',
+  'timeline.m2.output': 'Aplicaciones funcionales desplegadas. Badge: AI Builder.',
+  'timeline.m2.revenue': 'Tuición B2C: $300-$800/persona',
+
+  'timeline.m3.month': 'MES 3',
+  'timeline.m3.phase': '🍎 FEED — AgentCamp',
+  'timeline.m3.program': 'AgentCamp (4 semanas + capstone)',
+  'timeline.m3.ops': 'Formación especializada en agentes IA. Orquestación, despliegue, monetización. Certificación de Operador de Agentes.',
+  'timeline.m3.campaign': '🎯 Campaña "Los agentes son el nuevo SaaS" — upsell desde Vibe Coding + adquisición directa enterprise. Caso de estudio: "Cómo un agente reemplazó 3 procesos manuales."',
+  'timeline.m3.acquisition': 'Upsell de Vibe Coding grads. Pipeline B2B: empresas que quieren capacitar equipos. Protocol partnerships (DevRel). Meta: 20-40 inscritos.',
+  'timeline.m3.output': 'Agentes IA en producción. Certificado: Agent Operator.',
+  'timeline.m3.revenue': 'Tuición: $500-$1,500/persona + Enterprise L&D contracts ($25K-$100K)',
+
+  'timeline.m4.month': 'MES 4',
+  'timeline.m4.phase': '🌿 NURTURE — Hackathon',
+  'timeline.m4.program': 'AgentHack (3 semanas)',
+  'timeline.m4.ops': '2 semanas de build + 1 de evaluación. Equipos multidisciplinarios. Jurado mixto (industria + academia).',
+  'timeline.m4.campaign': '🎯 Campaña "Build or Be Built" — comunidad + sponsors. Hype de premios. Sponsors visibles. Protocol bounties. Cobertura en redes.',
+  'timeline.m4.acquisition': 'Abierto a toda la comunidad (no solo grads). Sponsors como pipeline enterprise. Protocolos como fuente de grants. Meta: 15-25 equipos.',
+  'timeline.m4.output': 'Prototipos funcionales evaluados. Badge: Impact Builder.',
+  'timeline.m4.revenue': 'Sponsors de hackathon ($10K-$100K) + Protocol grants',
+
+  'timeline.m5.month': 'MES 5-6',
+  'timeline.m5.phase': '🌳 GROW — Pre-Incubación',
+  'timeline.m5.program': 'Frutero Jam (6 semanas + Demo Day)',
+  'timeline.m5.ops': 'Mentoría intensiva. Conexión con inversores. Preparación de pitch. Demo Day público.',
+  'timeline.m5.campaign': '🎯 Campaña dual: (1) "De hackathon a startup" para builders. (2) "Invest in LATAM AI talent" para investors y sponsors del Demo Day.',
+  'timeline.m5.acquisition': 'Selección interna (top del hackathon). Sponsors del Demo Day como leads enterprise para siguiente ciclo. Investors como red de distribución. Meta: 10-15 proyectos.',
+  'timeline.m5.output': 'Productos con usuarios reales. Grants para top 5. Certificado: Frutero Fellow.',
+  'timeline.m5.revenue': 'Demo Day sponsors + Investor access fees + DevRel contracts renovados',
+
+  // Campaign Strategy
+  'campaigns.title': 'Estrategia de Campañas',
+  'campaigns.subtitle': 'Cada fase tiene un objetivo de comunicación distinto.',
+  'campaigns.awareness.title': '📣 Awareness (Mes 1)',
+  'campaigns.awareness.desc': 'Posicionar a Frutero como la entrada a carreras en IA. Contenido educativo gratuito. "¿Sabías que un AI Engineer gana 60-80% más?"',
+  'campaigns.awareness.channels': 'TikTok, Instagram Reels, LinkedIn, partnerships universitarios, Twitter/X tech',
+  'campaigns.awareness.kpi': 'Impresiones, seguidores, asistentes a workshops',
+
+  'campaigns.conversion.title': '🎯 Conversión (Mes 2-3)',
+  'campaigns.conversion.desc': 'Convertir audiencia en inscritos pagos. Testimonios, early bird, urgencia. "Solo 50 lugares. Inscripciones cierran el viernes."',
+  'campaigns.conversion.channels': 'Email drip, WhatsApp broadcast, webinars demo, retargeting ads',
+  'campaigns.conversion.kpi': 'Inscripciones, tasa de conversión, CAC',
+
+  'campaigns.community.title': '🔥 Comunidad (Mes 4)',
+  'campaigns.community.desc': 'Hackathon como evento público. Sponsors visibles. Builders compitiendo en vivo. "El próximo unicornio LATAM nace aquí."',
+  'campaigns.community.channels': 'Twitter/X live updates, Discord, Telegram, streams, press releases',
+  'campaigns.community.kpi': 'Equipos inscritos, sponsors confirmados, cobertura mediática',
+
+  'campaigns.outcomes.title': '🏆 Outcomes (Mes 5-6)',
+  'campaigns.outcomes.desc': 'Demo Day como showcase. Resultados concretos: grants, jobs, productos. Alimenta el awareness del siguiente ciclo.',
+  'campaigns.outcomes.channels': 'LinkedIn (profesional), press, video highlights, newsletter',
+  'campaigns.outcomes.kpi': 'Grants otorgados, empleos conseguidos, cobertura, leads para ciclo siguiente',
+
+  // Acquisition Funnel
+  'acquisition.title': 'Funnel de Adquisición',
+  'acquisition.subtitle': 'Cada fase alimenta la siguiente. Los alumni son el mejor canal.',
+
+  'acquisition.top.title': 'Top of Funnel',
+  'acquisition.top.volume': '500+ personas',
+  'acquisition.top.channels': 'Workshops gratis · Redes sociales · University partnerships · Referrals de alumni',
+  'acquisition.top.cost': 'CAC: $0-$15',
+
+  'acquisition.mid.title': 'Mid Funnel',
+  'acquisition.mid.volume': '50-90 inscritos',
+  'acquisition.mid.channels': 'Bootcamp ($300-$800) · AgentCamp ($500-$1,500) · Enterprise L&D ($25K-$100K)',
+  'acquisition.mid.cost': 'CAC: $30-$80 (B2C) · $500-$2K (B2B)',
+
+  'acquisition.bottom.title': 'Bottom of Funnel',
+  'acquisition.bottom.volume': '10-15 proyectos',
+  'acquisition.bottom.channels': 'Hackathon teams → Jam seleccionados → Demo Day → Grants/Jobs/Startups',
+  'acquisition.bottom.cost': 'CAC: $0 (selección interna)',
+
+  'acquisition.flywheel.title': 'El Flywheel',
+  'acquisition.flywheel.desc': 'Alumni del Ciclo N mentorean en Ciclo N+1. Sus proyectos son casos de estudio. Sus empleos son testimonios. Cada ciclo arranca más fuerte.',
+
+  // B2B vs B2C
+  'segments.title': 'Dos Motores de Adquisición',
+  'segments.subtitle': 'B2C para volumen y comunidad. B2B para margen y sustentabilidad.',
+
+  'segments.b2c.title': '👤 B2C — Usuarios',
+  'segments.b2c.who': 'Estudiantes universitarios, developers junior, career changers, autodidactas',
+  'segments.b2c.how': 'Workshops gratis → Bootcamp pago → Hackathon → Jam',
+  'segments.b2c.price': '$300-$1,500 por programa',
+  'segments.b2c.why': 'Volumen. Comunidad. Pipeline de talento. Alumni = canal orgánico.',
+
+  'segments.b2b.title': '🏢 B2B — Clientes Enterprise',
+  'segments.b2b.who': 'Empresas capacitando equipos, protocolos con budgets de DevRel, universidades buscando contenido',
+  'segments.b2b.how': 'Outbound + inbound (hackathon sponsors → training contracts). Pipeline desde Demo Day.',
+  'segments.b2b.price': '$25K-$250K por contrato',
+  'segments.b2b.why': 'Margen. Sustentabilidad. Un contrato B2B = 50-100 inscripciones B2C.',
+
+  // Metrics
+  'metrics.title': 'Métricas por Ciclo',
+  'metrics.subtitle': 'Lo que medimos. Lo que reportamos.',
+  'metrics.col.metric': 'Métrica',
+  'metrics.col.target': 'Meta / Ciclo',
+  'metrics.col.why': 'Por qué importa',
+
+  'metrics.row1.metric': 'Personas expuestas (SEED)',
+  'metrics.row1.target': '500+',
+  'metrics.row1.why': 'Top of funnel. Alcance de marca.',
+  'metrics.row2.metric': 'Inscritos pagos (FEED)',
+  'metrics.row2.target': '50-90',
+  'metrics.row2.why': 'Revenue B2C. Validación de producto.',
+  'metrics.row3.metric': 'Tasa de completación',
+  'metrics.row3.target': '>70%',
+  'metrics.row3.why': 'Calidad del programa. Retención.',
+  'metrics.row4.metric': 'Proyectos desplegados',
+  'metrics.row4.target': '50+',
+  'metrics.row4.why': 'Output tangible. Casos de estudio.',
+  'metrics.row5.metric': 'Equipos en hackathon',
+  'metrics.row5.target': '15-25',
+  'metrics.row5.why': 'Comunidad activa. Atracción de sponsors.',
+  'metrics.row6.metric': 'Proyectos en Jam',
+  'metrics.row6.target': '10-15',
+  'metrics.row6.why': 'Pipeline de startups.',
+  'metrics.row7.metric': 'Grants otorgados',
+  'metrics.row7.target': '5',
+  'metrics.row7.why': 'Proof of outcomes.',
+  'metrics.row8.metric': 'Contratos enterprise',
+  'metrics.row8.target': '2-5',
+  'metrics.row8.why': 'Revenue B2B. Sustentabilidad.',
+  'metrics.row9.metric': 'NPS participantes',
+  'metrics.row9.target': '>8.0',
+  'metrics.row9.why': 'Satisfacción. Referrals orgánicos.',
+
+  // Revenue
+  'revenue.title': 'Revenue por Fase',
+  'revenue.subtitle': 'Estimado conservador por ciclo de 6 meses.',
+  'revenue.total': 'Total estimado por ciclo',
+  'revenue.range': '$150K - $600K+',
+
+  'revenue.r1.source': 'Tuición B2C (bootcamps)',
+  'revenue.r1.amount': '$15K-$70K',
+  'revenue.r2.source': 'Enterprise L&D (B2B)',
+  'revenue.r2.amount': '$50K-$250K',
+  'revenue.r3.source': 'Sponsors (workshops + hackathon)',
+  'revenue.r3.amount': '$30K-$150K',
+  'revenue.r4.source': 'Protocol DevRel',
+  'revenue.r4.amount': '$25K-$100K',
+  'revenue.r5.source': 'Demo Day (investor access)',
+  'revenue.r5.amount': '$10K-$50K',
+
+  // CTA
+  'cta.title': '¿Qué sigue?',
+  'cta.item1': '📅 Definir fechas del Ciclo 1 (2026)',
+  'cta.item2': '🤝 Cerrar partnerships universidad + 2 sponsors',
+  'cta.item3': '🎯 Lanzar campaña SEED (Mes 1)',
+  'cta.item4': '📊 Dashboard de métricas en vivo',
+  'cta.item5': '💼 Pipeline de 3 leads enterprise',
+  'cta.note': 'Documento interno — actualizado por el equipo Frutero.',
+
+  'footer.copyright': '© 2026 Frutero LLC — Documento interno. No es propuesta comercial.',
+} as Record<string, string>;

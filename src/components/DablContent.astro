@@ -1,0 +1,353 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const CTA = 'https://cal.com/troopdegen/lets-build-together?duration=20&overlayCalendar=true';
+---
+
+<!-- Hero -->
+<section class="min-h-[85vh] flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/5"></div>
+  <div class="max-w-5xl mx-auto px-4 py-24 relative z-10 text-center space-y-8">
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-tight">
+      Dabl <span class="inline-block rotate-1 rounded-xl bg-primary px-4 py-2 text-primary-fg shadow-lg">×</span> Frutero
+    </h1>
+    <p class="text-2xl md:text-3xl text-foreground/70 font-medium">
+      {t('dabl', lang, 'hero.subtitle')}
+    </p>
+    <p class="text-lg text-foreground/50 max-w-2xl mx-auto leading-relaxed">
+      {t('dabl', lang, 'hero.description')}
+    </p>
+    <a href="#today" class="inline-block bg-foreground text-background px-10 py-5 rounded-full font-bold text-lg hover:opacity-80 transition-all hover:scale-105 transform shadow-lg">
+      {t('dabl', lang, 'hero.cta')}
+    </a>
+  </div>
+</section>
+
+<!-- What Exists Today -->
+<section class="py-20 px-4 bg-muted" id="today">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-medium text-center">{t('dabl', lang, 'today.title')}</h2>
+    <div class="grid md:grid-cols-2 gap-8 stagger">
+      <div class="rounded-2xl border border-primary/20 bg-primary/5 p-8 space-y-4 animate-fade-up">
+        <h3 class="text-primary font-bold text-xl flex items-center gap-2">{t('dabl', lang, 'today.frutero.title')}</h3>
+        <ul class="space-y-3 text-foreground/70">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.frutero.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.frutero.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.frutero.3')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.frutero.4')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.frutero.5')}</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-primary/20 bg-card p-8 space-y-4 animate-fade-up">
+        <h3 class="text-foreground font-bold text-xl flex items-center gap-2">{t('dabl', lang, 'today.dabl.title')}</h3>
+        <ul class="space-y-3 text-foreground/70">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.dabl.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.dabl.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.dabl.3')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.dabl.4')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'today.dabl.5')}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Model -->
+<section class="py-20 px-4" id="model">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-medium text-center">{t('dabl', lang, 'model.title')}</h2>
+    <p class="text-center text-foreground/50 text-lg">{t('dabl', lang, 'model.subtitle')}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger">
+      {[
+        { key: 'seed', emoji: '🌱' },
+        { key: 'feed', emoji: '🍽️' },
+        { key: 'nurture', emoji: '🌿' },
+        { key: 'grow', emoji: '🌳' },
+      ].map(({ key, emoji }) => (
+        <div class="rounded-2xl border border-primary/20 bg-card p-6 space-y-3 text-center animate-fade-up">
+          <div class="text-4xl">{emoji}</div>
+          <h3 class="font-bold text-lg text-primary">{t('dabl', lang, `model.${key}.title`)}</h3>
+          <p class="text-sm text-foreground/60 font-semibold">{t('dabl', lang, `model.${key}.subtitle`)}</p>
+          <p class="text-sm text-foreground/50">{t('dabl', lang, `model.${key}.description`)}</p>
+          <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, `model.${key}.revenue`)}</div>
+        </div>
+      ))}
+    </div>
+    <div class="hidden lg:flex justify-center items-center gap-2 text-primary/40 text-2xl font-bold">
+      <span>SEED</span><span>→</span><span>FEED</span><span>→</span><span>NURTURE</span><span>→</span><span>GROW</span>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-20 px-4 bg-muted" id="howItWorks">
+  <div class="max-w-5xl mx-auto space-y-12">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('dabl', lang, 'howItWorks.title')}</h2>
+      <p class="text-foreground/50 text-lg mt-2">{t('dabl', lang, 'howItWorks.subtitle')}</p>
+    </div>
+
+    <!-- Flywheel -->
+    <div class="rounded-2xl border border-primary/20 bg-card p-8 space-y-6">
+      <h3 class="font-bold text-xl text-center">{t('dabl', lang, 'howItWorks.flywheel.title')}</h3>
+      <div class="flex flex-wrap justify-center items-center gap-3 text-sm">
+        {[1,2,3,4,5,6].map((i, idx) => (
+          <>
+            <div class="rounded-full bg-primary/10 text-primary px-4 py-2 font-semibold text-center">
+              {t('dabl', lang, `howItWorks.flywheel.${i}`)}
+            </div>
+            {idx < 5 && <span class="text-primary/40 text-xl font-bold">→</span>}
+          </>
+        ))}
+        <span class="text-primary/40 text-xl font-bold">↻</span>
+      </div>
+      <p class="text-center text-foreground/50 text-sm italic">{t('dabl', lang, 'howItWorks.flywheel.note')}</p>
+    </div>
+
+    <!-- Monthly Timeline -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+      {[1,2,3,4,5,6].map((i) => (
+        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-3 animate-fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">{t('dabl', lang, `howItWorks.month${i}.title`)}</span>
+          </div>
+          <h3 class="font-bold text-base">{t('dabl', lang, `howItWorks.month${i}.phase`)}</h3>
+          <p class="text-sm text-foreground/60">{t('dabl', lang, `howItWorks.month${i}.desc`)}</p>
+          <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, `howItWorks.month${i}.revenue`)}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Compound Effect -->
+    <div class="rounded-2xl border border-primary/20 bg-primary/5 p-8 space-y-4">
+      <h3 class="font-bold text-xl text-center">{t('dabl', lang, 'howItWorks.compound.title')}</h3>
+      <div class="space-y-3 max-w-3xl mx-auto">
+        {['cycle1', 'cycle2', 'cycle3'].map((key, i) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-primary font-bold text-lg mt-0.5">{i + 1}.</span>
+            <p class="text-foreground/70">{t('dabl', lang, `howItWorks.compound.${key}`)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collaboration Options -->
+<section class="py-20 px-4 bg-muted" id="options">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-medium">{t('dabl', lang, 'options.title')}</h2>
+      <p class="text-foreground/50 mt-2">{t('dabl', lang, 'options.subtitle')}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+
+      <!-- Option A -->
+      <div class="rounded-2xl border-2 border-primary/40 bg-gradient-to-b from-primary/10 to-background p-6 space-y-4 ring-1 ring-ring/20 animate-fade-up">
+        <div class="text-xs font-bold uppercase tracking-widest text-primary">{t('dabl', lang, 'options.a.badge')}</div>
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'options.a.title')}</h3>
+        <p class="text-sm text-foreground/60">{t('dabl', lang, 'options.a.description')}</p>
+        <ul class="space-y-1 text-sm text-foreground/50">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.a.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.a.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.a.3')}</li>
+        </ul>
+        <div class="rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, 'options.a.tag')}</div>
+      </div>
+
+      <!-- Option B -->
+      <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4 shadow-md animate-fade-up">
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'options.b.title')}</h3>
+        <p class="text-sm text-foreground/60">{t('dabl', lang, 'options.b.description')}</p>
+        <ul class="space-y-1 text-sm text-foreground/50">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.b.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.b.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.b.3')}</li>
+        </ul>
+        <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, 'options.b.tag')}</div>
+      </div>
+
+      <!-- Option C -->
+      <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4 shadow-md animate-fade-up">
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'options.c.title')}</h3>
+        <p class="text-sm text-foreground/60">{t('dabl', lang, 'options.c.description')}</p>
+        <ul class="space-y-1 text-sm text-foreground/50">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.c.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.c.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.c.3')}</li>
+        </ul>
+        <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, 'options.c.tag')}</div>
+      </div>
+
+      <!-- Option D -->
+      <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4 shadow-md animate-fade-up">
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'options.d.title')}</h3>
+        <p class="text-sm text-foreground/60">{t('dabl', lang, 'options.d.description')}</p>
+        <ul class="space-y-1 text-sm text-foreground/50">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.d.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.d.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.d.3')}</li>
+        </ul>
+        <div class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, 'options.d.tag')}</div>
+      </div>
+
+      <!-- Option E -->
+      <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4 shadow-md animate-fade-up">
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'options.e.title')}</h3>
+        <p class="text-sm text-foreground/60">{t('dabl', lang, 'options.e.description')}</p>
+        <ul class="space-y-1 text-sm text-foreground/50">
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.e.1')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.e.2')}</li>
+          <li class="flex gap-2"><span class="text-primary">✓</span>{t('dabl', lang, 'options.e.3')}</li>
+        </ul>
+        <div class="rounded-full bg-secondary/10 text-secondary px-3 py-1 text-xs font-semibold inline-block">{t('dabl', lang, 'options.e.tag')}</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Revenue Potential -->
+<section class="py-20 px-4" id="revenue">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-medium text-center">{t('dabl', lang, 'revenue.title')}</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 stagger">
+      <div class="text-center animate-count-up"><div class="text-5xl font-medium text-primary">$145K</div><div class="text-foreground/50 text-sm mt-2">{t('dabl', lang, 'revenue.conservative')}</div></div>
+      <div class="text-center animate-count-up"><div class="text-5xl font-medium text-primary">$1M+</div><div class="text-foreground/50 text-sm mt-2">{t('dabl', lang, 'revenue.potential')}</div></div>
+      <div class="text-center animate-count-up"><div class="text-5xl font-medium text-primary">6 mo</div><div class="text-foreground/50 text-sm mt-2">{t('dabl', lang, 'revenue.cycle')}</div></div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b border-border text-foreground/50">
+            <th class="py-3 pr-4">{t('dabl', lang, 'revenue.table.product')}</th>
+            <th class="py-3 pr-4">{t('dabl', lang, 'revenue.table.seller')}</th>
+            <th class="py-3 pr-4">{t('dabl', lang, 'revenue.table.price')}</th>
+            <th class="py-3">{t('dabl', lang, 'revenue.table.revenue')}</th>
+          </tr>
+        </thead>
+        <tbody class="text-foreground/60">
+          {[1,2,3,4,5].map(i => (
+            <tr class:list={[i < 5 ? 'border-b border-border/50' : '']}>
+              <td class="py-3 pr-4 font-semibold text-foreground">{t('dabl', lang, `revenue.row${i}.product`)}</td>
+              <td class="py-3 pr-4">{t('dabl', lang, `revenue.row${i}.seller`)}</td>
+              <td class="py-3 pr-4">{t('dabl', lang, `revenue.row${i}.price`)}</td>
+              <td class="py-3 text-primary font-semibold">{t('dabl', lang, `revenue.row${i}.revenue`)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <!-- Revenue Split -->
+    <div class="grid sm:grid-cols-3 gap-6 mt-8">
+      {['b2c', 'b2b', 'events'].map((key, i) => {
+        const splits = ['30/70', '40/60', '50/50'];
+        return (
+          <div class="rounded-xl border border-primary/15 shadow-sm p-6 text-center">
+            <h3 class="font-bold text-lg mb-2">{t('dabl', lang, `revenue.split.${key}`)}</h3>
+            <div class="text-3xl font-medium text-primary">{splits[i]}</div>
+            <p class="text-foreground/50 text-sm mt-1">{t('dabl', lang, 'revenue.split.label')}</p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<!-- Community Growth -->
+<section class="py-20 px-4 bg-muted" id="community">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-medium text-center">{t('dabl', lang, 'community.title')}</h2>
+    <p class="text-center text-foreground/50 text-lg">{t('dabl', lang, 'community.subtitle')}</p>
+    <div class="grid sm:grid-cols-2 gap-6 stagger">
+      <div class="rounded-xl border border-primary/15 shadow-sm bg-card p-6 space-y-4 animate-fade-up">
+        <div class="text-2xl">📋</div>
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'community.bounty.title')}</h3>
+        <p class="text-foreground/60 text-sm">{t('dabl', lang, 'community.bounty.description')}</p>
+      </div>
+      <div class="rounded-xl border border-primary/15 shadow-sm bg-card p-6 space-y-4 animate-fade-up">
+        <div class="text-2xl">🎬</div>
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'community.courses.title')}</h3>
+        <p class="text-foreground/60 text-sm">{t('dabl', lang, 'community.courses.description')}</p>
+      </div>
+      <div class="rounded-xl border border-primary/20 bg-primary/5 p-6 space-y-4 animate-fade-up">
+        <div class="text-2xl">💰</div>
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'community.revenue.title')}</h3>
+        <div class="grid grid-cols-3 gap-2 mt-2">
+          <div class="text-center"><div class="text-2xl font-medium text-primary">60%</div><div class="text-xs text-foreground/50">{t('dabl', lang, 'community.revenue.creator')}</div></div>
+          <div class="text-center"><div class="text-2xl font-medium text-primary">20%</div><div class="text-xs text-foreground/50">{t('dabl', lang, 'community.revenue.platform')}</div></div>
+          <div class="text-center"><div class="text-2xl font-medium text-primary">20%</div><div class="text-xs text-foreground/50">{t('dabl', lang, 'community.revenue.curation')}</div></div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-primary/15 shadow-sm bg-card p-6 space-y-4 animate-fade-up">
+        <div class="text-2xl">🏅</div>
+        <h3 class="font-bold text-lg">{t('dabl', lang, 'community.badges.title')}</h3>
+        <p class="text-foreground/60 text-sm">{t('dabl', lang, 'community.badges.description')}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Together -->
+<section class="py-20 px-4">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl sm:text-4xl font-medium text-center">{t('dabl', lang, 'why.title')}</h2>
+    <p class="text-center text-foreground/50 text-lg">{t('dabl', lang, 'why.subtitle')}</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="py-4 pr-6 text-foreground/50 font-medium"></th>
+            <th class="py-4 pr-6 text-foreground/50 font-medium">{t('dabl', lang, 'why.col.alone.frutero')}</th>
+            <th class="py-4 pr-6 text-foreground/50 font-medium">{t('dabl', lang, 'why.col.alone.dabl')}</th>
+            <th class="py-4 text-primary font-bold">{t('dabl', lang, 'why.col.together')}</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm sm:text-base">
+          {[1,2,3,4,5].map((i) => {
+            const fruteroGood = [true, false, false, false, false][i-1];
+            const dablGood = [false, true, true, true, false][i-1];
+            return (
+              <tr class:list={[i < 5 ? 'border-b border-border/50' : '']}>
+                <td class="py-4 pr-6 font-semibold text-foreground">{t('dabl', lang, `why.row${i}.label`)}</td>
+                <td class="py-4 pr-6 text-foreground/50"><span class:list={[fruteroGood ? 'text-success' : 'text-danger', 'mr-1']}>{fruteroGood ? '✓' : '✗'}</span>{t('dabl', lang, `why.row${i}.frutero`)}</td>
+                <td class="py-4 pr-6 text-foreground/50"><span class:list={[dablGood ? 'text-success' : 'text-danger', 'mr-1']}>{dablGood ? '✓' : '✗'}</span>{t('dabl', lang, `why.row${i}.dabl`)}</td>
+                <td class="py-4 text-foreground/70"><span class="text-success mr-1">✓</span>{t('dabl', lang, `why.row${i}.together`)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Next Step CTA -->
+<section class="py-24 px-4 bg-gradient-to-br from-secondary/10 via-primary/5 to-accent/10 cta-section">
+  <div class="max-w-3xl mx-auto text-center space-y-8">
+    <h2 class="text-4xl sm:text-5xl font-medium">{t('dabl', lang, 'cta.title')}</h2>
+    <div class="rounded-2xl border border-primary/20 bg-background/80 p-8 space-y-4 text-left">
+      <p class="text-lg text-foreground/70 leading-relaxed">
+        <strong class="text-foreground">{t('dabl', lang, 'cta.start')}</strong> {t('dabl', lang, 'cta.description')}
+      </p>
+      <p class="text-foreground/50">{t('dabl', lang, 'cta.detail')}</p>
+    </div>
+    <a href={CTA} target="_blank" rel="noopener" class="inline-block bg-foreground text-background px-10 py-5 rounded-full font-bold text-lg hover:opacity-80 transition-all hover:scale-105 transform">
+      {t('dabl', lang, 'cta.button')}
+    </a>
+    <p class="text-foreground/50 text-sm">{t('dabl', lang, 'cta.email.prefix')} <a href="mailto:mel@frutero.club" class="text-primary hover:underline">mel@frutero.club</a></p>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center space-y-4">
+    <p class="text-xl text-foreground/50 italic">{t('dabl', lang, 'quote.text')}</p>
+    <p class="text-sm text-foreground/30">{t('dabl', lang, 'quote.disclaimer')}</p>
+  </div>
+</section>
