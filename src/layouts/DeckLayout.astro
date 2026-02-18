@@ -22,34 +22,34 @@ const CTA_LINK = 'https://cal.com/troopdegen/lets-build-together?duration=20&ove
 </head>
 <body class="min-h-screen bg-background text-foreground">
   <!-- Nav -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border no-print">
-    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-      <a href="/" class="text-lg font-bold flex items-center gap-2">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 no-print">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center">
         <img src="/images/logos/frutero-logo.svg" alt="Frutero" class="h-10 w-auto" />
       </a>
-      <div class="flex items-center gap-6 text-sm">
-        <a href="/partner" class="text-foreground/60 hover:text-primary transition-colors">Partner</a>
-        <a href="/devrel" class="text-foreground/60 hover:text-primary transition-colors">DevRel</a>
-        <a href={CTA_LINK} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-primary text-primary-fg px-5 py-2 rounded-full font-bold text-sm hover:opacity-90 transition-all shadow-sm">
+      <div class="flex items-center gap-6 text-sm font-semibold">
+        <a href="/partner" class="text-foreground/70 hover:text-foreground transition-colors">Partner</a>
+        <a href="/devrel" class="text-foreground/70 hover:text-foreground transition-colors">DevRel</a>
+        <a href={CTA_LINK} target="_blank" rel="noopener" class="hidden sm:inline-flex bg-primary text-primary-fg px-6 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition-all shadow-md">
           Let's Talk
         </a>
       </div>
     </div>
   </nav>
 
-  <main class="pt-14">
+  <main class="pt-16">
     <slot />
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-border py-12 no-print">
+  <footer class="border-t border-border/60 py-12 no-print">
     <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
-      <div class="flex justify-center gap-6 text-sm text-foreground/40">
-        <a href="https://frutero.club" class="hover:text-primary transition-colors">frutero.club</a>
-        <span>•</span>
-        <a href="https://x.com/FruteroClub" class="hover:text-primary transition-colors">@FruteroClub</a>
-        <span>•</span>
-        <a href="mailto:mel@frutero.club" class="hover:text-primary transition-colors">mel@frutero.club</a>
+      <div class="flex justify-center gap-6 text-sm text-foreground/50 font-medium">
+        <a href="https://frutero.club" class="hover:text-foreground transition-colors">frutero.club</a>
+        <span>·</span>
+        <a href="https://x.com/FruteroClub" class="hover:text-foreground transition-colors">@FruteroClub</a>
+        <span>·</span>
+        <a href="mailto:mel@frutero.club" class="hover:text-foreground transition-colors">mel@frutero.club</a>
       </div>
       <p class="text-foreground/30 text-xs">© 2026 Frutero. All rights reserved.</p>
     </div>

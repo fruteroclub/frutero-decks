@@ -7,18 +7,20 @@
   --color-card: #fcf2e9;
   --color-primary: oklch(0.7652 0.1752 62.57);
   --color-primary-fg: oklch(0.9851 0 0);
+  --color-primary-dark: oklch(0.55 0.18 60);
   --color-secondary: oklch(0.6519 0.2118 22.71);
   --color-accent: oklch(0.7989 0.1902 126.36);
   --color-muted: oklch(0.95 0.01 80);
+  --color-muted-fg: oklch(0.40 0 0);
   --color-border: oklch(0.85 0.01 80);
   --color-ring: oklch(0.554 0.135 66.442);
-  --color-success: #22c55e;
-  --color-danger: #ef4444;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
 
-  /* Legacy aliases for easy migration */
+  /* Legacy aliases */
   --color-mango: oklch(0.7652 0.1752 62.57);
   --color-mango-light: oklch(0.82 0.15 65);
-  --color-mango-dark: oklch(0.65 0.18 60);
+  --color-mango-dark: oklch(0.55 0.18 60);
 
   --font-sans: 'Raleway', system-ui, -apple-system, sans-serif;
   --font-heading: 'Funnel Display', 'Raleway', system-ui, sans-serif;
@@ -39,16 +41,19 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: 500;
   letter-spacing: -0.025em;
 }
+
+h1 { font-weight: 800; }
+h2 { font-weight: 700; }
+h3 { font-weight: 600; }
 
 h4 {
   font-family: var(--font-space);
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .subrayado {
