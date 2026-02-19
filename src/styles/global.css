@@ -53,7 +53,16 @@ h4 {
 }
 
 a {
-  color: var(--color-primary-dark);
+  color: var(--color-accent);
+}
+
+/* White text on colored backgrounds — override for CTA buttons */
+a.text-primary-fg,
+a.cta,
+a[role="button"],
+.bg-primary > a,
+.bg-secondary > a {
+  color: oklch(0.9851 0 0) !important;
 }
 
 .subrayado {
