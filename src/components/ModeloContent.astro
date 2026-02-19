@@ -9,10 +9,10 @@ const { lang } = Astro.props;
 const CTA = 'https://cal.com/troopdegen/lets-build-together?duration=20&overlayCalendar=true';
 
 const journeySteps = [
-  { key: 'discover', emoji: '🔍', color: 'border-accent/40 bg-accent/8', accent: 'text-accent', bg: 'bg-accent/15' },
-  { key: 'learn', emoji: '📚', color: 'border-primary/40 bg-primary/8', accent: 'text-primary', bg: 'bg-primary/15' },
-  { key: 'build', emoji: '🔨', color: 'border-secondary/40 bg-secondary/8', accent: 'text-secondary', bg: 'bg-secondary/15' },
-  { key: 'launch', emoji: '🚀', color: 'border-foreground/20 bg-foreground/5', accent: 'text-foreground', bg: 'bg-foreground/10' },
+  { key: 'discover', emoji: '🔍', num: '01' },
+  { key: 'learn', emoji: '📚', num: '02' },
+  { key: 'build', emoji: '🔨', num: '03' },
+  { key: 'launch', emoji: '🚀', num: '04' },
 ];
 
 const methodologies = ['learning', 'pbl', 'cbe', 'peer', 'ai'];
@@ -25,58 +25,52 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 ---
 
 <!-- Hero -->
-<section class="min-h-[70vh] flex items-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-primary/5"></div>
-  <div class="max-w-5xl mx-auto px-4 py-24 relative z-10 text-center space-y-8">
-    <div class="inline-block text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-4 py-2 rounded-full">{t('modelo', lang, 'hero.badge')}</div>
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-      {t('modelo', lang, 'hero.title')}
+<section class="min-h-[65svh] flex items-center pt-12 pb-8 md:pt-20">
+  <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight">
+      <span class="inline-block -rotate-2 rounded-lg bg-primary px-4 py-2 text-white">Modelo</span>
+      {' '}Educativo{' '}
+      <span class="inline-block rotate-1 rounded-lg bg-accent px-4 py-2 text-foreground">Frutero</span>
     </h1>
-    <p class="text-2xl md:text-3xl text-foreground/70 font-medium">
+    <h3 class="text-2xl md:text-3xl text-foreground font-medium max-w-3xl mx-auto">
       {t('modelo', lang, 'hero.subtitle')}
-    </p>
-    <p class="text-lg text-foreground/50 max-w-2xl mx-auto leading-relaxed">
+    </h3>
+    <p class="text-lg text-muted-fg max-w-2xl mx-auto leading-relaxed">
       {t('modelo', lang, 'hero.description')}
     </p>
-    <a href="#journey" style="color: #ffffff !important;" class="inline-block bg-primary px-10 py-5 rounded-full font-bold text-lg hover:brightness-110 transition-all hover:scale-105 transform shadow-lg">
+    <a href="#journey" style="color: #ffffff !important;" class="inline-block bg-primary px-10 py-5 rounded-full font-semibold text-lg hover:brightness-110 transition-all hover:scale-105 transform">
       {t('modelo', lang, 'hero.cta')}
     </a>
   </div>
 </section>
 
 <!-- El Camino del Estudiante -->
-<section class="py-20 px-4 bg-muted" id="journey">
-  <div class="max-w-5xl mx-auto space-y-12">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'journey.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'journey.subtitle')}</p>
+<section class="py-16 px-4" id="journey">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        El Camino del{' '}
+        <span class="inline-block -rotate-1 rounded-lg bg-secondary px-4 py-2 text-white">Estudiante</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'journey.subtitle')}</p>
     </div>
 
-    <!-- Journey visual bar -->
-    <div class="flex rounded-2xl overflow-hidden border border-primary/20 text-center font-bold text-sm">
-      {journeySteps.map((step) => (
-        <div class={`flex-1 py-6 ${step.bg} border-r border-primary/10 last:border-r-0`}>
-          <div class="text-2xl mb-1">{step.emoji}</div>
-          <div class={step.accent}>{t('modelo', lang, `journey.${step.key}.phase`)}</div>
-          <div class="text-xs text-foreground/40 mt-1">{t('modelo', lang, `journey.${step.key}.label`)}</div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Journey cards -->
     <div class="space-y-6">
-      {journeySteps.map((step) => (
-        <div class={`rounded-2xl border-2 p-6 sm:p-8 space-y-4 ${step.color}`}>
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="text-3xl">{step.emoji}</span>
-            <div>
-              <span class={`text-xs font-bold uppercase tracking-widest ${step.accent} ${step.bg} px-3 py-1 rounded-full`}>{t('modelo', lang, `journey.${step.key}.phase`)}</span>
-              <h3 class="font-bold text-lg mt-2">{t('modelo', lang, `journey.${step.key}.title`)}</h3>
-            </div>
+      {journeySteps.map((step, i) => (
+        <div class="flex items-start gap-6 md:gap-8">
+          <!-- Number -->
+          <div class="shrink-0 w-16 h-16 rounded-2xl bg-foreground flex items-center justify-center">
+            <span class="text-2xl font-semibold text-background font-[family-name:var(--font-space)]">{step.num}</span>
           </div>
-          <p class="text-sm text-foreground/70 leading-relaxed">{t('modelo', lang, `journey.${step.key}.desc`)}</p>
-          <div class={`inline-block rounded-full ${step.bg} ${step.accent} px-4 py-1.5 text-sm font-semibold`}>
-            → {t('modelo', lang, `journey.${step.key}.outcome`)}
+          <!-- Content -->
+          <div class="flex-1 space-y-2">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-2xl">{step.emoji}</span>
+              <span class="text-sm font-semibold uppercase tracking-widest text-primary">{t('modelo', lang, `journey.${step.key}.phase`)}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground">{t('modelo', lang, `journey.${step.key}.title`)}</h3>
+            <p class="text-base text-muted-fg leading-relaxed">{t('modelo', lang, `journey.${step.key}.desc`)}</p>
+            <p class="text-sm font-semibold text-primary">→ {t('modelo', lang, `journey.${step.key}.outcome`)}</p>
           </div>
         </div>
       ))}
@@ -85,21 +79,25 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- Metodología -->
-<section class="py-20 px-4" id="methodology">
-  <div class="max-w-5xl mx-auto space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'methodology.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'methodology.subtitle')}</p>
+<section class="py-16 px-4" id="methodology">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        Metodología{' '}
+        <span class="subrayado underline-offset-8">Pedagógica</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'methodology.subtitle')}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+    <!-- Dark card with methodologies -->
+    <div class="rounded-2xl bg-foreground p-8 md:p-10 space-y-6">
       {methodologies.map((key) => (
-        <div class="rounded-2xl border-2 border-foreground/10 bg-background p-6 space-y-3">
-          <h3 class="font-semibold text-lg text-foreground">{t('modelo', lang, `methodology.${key}.title`)}</h3>
-          <div class="rounded-full bg-primary/15 text-primary px-3 py-1 text-xs font-semibold inline-block">
-            {t('modelo', lang, `methodology.${key}.framework`)}
+        <div class="border-b border-background/10 pb-5 last:border-0 last:pb-0">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <h3 class="text-lg font-semibold text-background">{t('modelo', lang, `methodology.${key}.title`)}</h3>
+            <span class="rounded-full bg-primary/20 text-primary px-3 py-0.5 text-xs font-semibold">{t('modelo', lang, `methodology.${key}.framework`)}</span>
           </div>
-          <p class="text-sm text-foreground/70 leading-relaxed">{t('modelo', lang, `methodology.${key}.desc`)}</p>
+          <p class="text-base text-background/70 leading-relaxed">{t('modelo', lang, `methodology.${key}.desc`)}</p>
         </div>
       ))}
     </div>
@@ -107,19 +105,22 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- OKRs -->
-<section class="py-20 px-4 bg-muted" id="okrs">
-  <div class="max-w-5xl mx-auto space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'okrs.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'okrs.subtitle')}</p>
+<section class="py-16 px-4" id="okrs">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        Resultados{' '}
+        <span class="inline-block rotate-1 rounded-lg bg-accent px-4 py-2 text-foreground">Medibles</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'okrs.subtitle')}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
       {okrs.map((key) => (
-        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-3 text-center">
-          <h3 class="font-bold text-base">{t('modelo', lang, `okrs.${key}.metric`)}</h3>
-          <div class="text-3xl font-bold text-primary">{t('modelo', lang, `okrs.${key}.target`)}</div>
-          <p class="text-sm text-foreground/60">{t('modelo', lang, `okrs.${key}.desc`)}</p>
+        <div class="rounded-2xl border-2 border-border bg-card p-6 space-y-3 text-center">
+          <h4 class="font-semibold text-base text-foreground">{t('modelo', lang, `okrs.${key}.metric`)}</h4>
+          <div class="text-4xl font-semibold text-primary">{t('modelo', lang, `okrs.${key}.target`)}</div>
+          <p class="text-sm text-muted-fg">{t('modelo', lang, `okrs.${key}.desc`)}</p>
         </div>
       ))}
     </div>
@@ -127,20 +128,23 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- Modelo de Colaboración -->
-<section class="py-20 px-4" id="collaboration">
-  <div class="max-w-5xl mx-auto space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'collaboration.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'collaboration.subtitle')}</p>
+<section class="py-16 px-4" id="collaboration">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        Modelo de{' '}
+        <span class="inline-block -rotate-1 rounded-lg bg-primary px-4 py-2 text-white">Colaboración</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'collaboration.subtitle')}</p>
     </div>
 
     <div class="space-y-4">
       {collaborationItems.map((key, i) => (
-        <div class="rounded-2xl border border-primary/15 bg-card p-6 flex flex-col sm:flex-row gap-4 items-start">
-          <span class="text-primary font-bold text-xl min-w-[2rem]">{i + 1}.</span>
+        <div class="flex items-start gap-5 rounded-2xl border-2 border-border bg-background p-6 transition-all hover:border-primary/50">
+          <span class="shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold">{i + 1}</span>
           <div>
-            <h3 class="font-bold text-lg">{t('modelo', lang, `collaboration.${key}.title`)}</h3>
-            <p class="text-sm text-foreground/60 mt-1 leading-relaxed">{t('modelo', lang, `collaboration.${key}.desc`)}</p>
+            <h3 class="font-semibold text-lg text-foreground">{t('modelo', lang, `collaboration.${key}.title`)}</h3>
+            <p class="text-base text-muted-fg mt-1 leading-relaxed">{t('modelo', lang, `collaboration.${key}.desc`)}</p>
           </div>
         </div>
       ))}
@@ -149,25 +153,28 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- Programas Disponibles -->
-<section class="py-20 px-4 bg-muted" id="programs">
-  <div class="max-w-5xl mx-auto space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'programs.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'programs.subtitle')}</p>
+<section class="py-16 px-4" id="programs">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        Programas{' '}
+        <span class="subrayado underline-offset-8">Disponibles</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'programs.subtitle')}</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-6 stagger">
       {programs.map((key) => (
-        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4">
-          <h3 class="font-bold text-xl">{t('modelo', lang, `programs.${key}.title`)}</h3>
+        <div class="rounded-2xl border-2 border-border bg-card p-6 space-y-4">
+          <h3 class="font-semibold text-xl text-foreground">{t('modelo', lang, `programs.${key}.title`)}</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">{t('modelo', lang, `programs.${key}.duration`)}</span>
-            <span class="rounded-full bg-foreground/5 text-foreground/60 px-3 py-1 text-xs font-semibold">{t('modelo', lang, `programs.${key}.level`)}</span>
+            <span class="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">{t('modelo', lang, `programs.${key}.duration`)}</span>
+            <span class="rounded-full bg-foreground/10 text-foreground px-3 py-1 text-xs font-semibold">{t('modelo', lang, `programs.${key}.level`)}</span>
           </div>
-          <p class="text-sm text-foreground/60 leading-relaxed">{t('modelo', lang, `programs.${key}.desc`)}</p>
-          <div class="text-xs text-foreground/40 space-y-1">
-            <div><span class="font-bold text-foreground/50">Outcomes:</span> {t('modelo', lang, `programs.${key}.outcomes`)}</div>
-            <div><span class="font-bold text-foreground/50">Precio:</span> {t('modelo', lang, `programs.${key}.price`)}</div>
+          <p class="text-base text-muted-fg leading-relaxed">{t('modelo', lang, `programs.${key}.desc`)}</p>
+          <div class="text-sm text-foreground space-y-1">
+            <div><span class="font-semibold">Outcomes:</span> <span class="text-muted-fg">{t('modelo', lang, `programs.${key}.outcomes`)}</span></div>
+            <div><span class="font-semibold">Precio:</span> <span class="text-primary font-semibold">{t('modelo', lang, `programs.${key}.price`)}</span></div>
           </div>
         </div>
       ))}
@@ -176,11 +183,14 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- Puntos de Sinergia -->
-<section class="py-20 px-4" id="synergy">
-  <div class="max-w-5xl mx-auto space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-medium">{t('modelo', lang, 'synergy.title')}</h2>
-      <p class="text-foreground/50 text-lg mt-2">{t('modelo', lang, 'synergy.subtitle')}</p>
+<section class="py-16 px-4" id="synergy">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-3xl md:text-4xl text-foreground">
+        Puntos de{' '}
+        <span class="inline-block rotate-1 rounded-lg bg-secondary px-4 py-2 text-white">Sinergia</span>
+      </h2>
+      <p class="text-xl text-muted-fg">{t('modelo', lang, 'synergy.subtitle')}</p>
     </div>
 
     <div class="grid sm:grid-cols-3 gap-6 stagger">
@@ -189,10 +199,10 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
         { key: 'student', emoji: '👨‍🎓' },
         { key: 'industry', emoji: '🏢' },
       ].map(({ key, emoji }) => (
-        <div class="rounded-2xl border border-primary/15 bg-card p-6 space-y-4">
+        <div class="rounded-2xl bg-foreground p-6 space-y-4">
           <div class="text-3xl">{emoji}</div>
-          <h3 class="font-bold text-lg">{t('modelo', lang, `synergy.${key}.title`)}</h3>
-          <ul class="space-y-2 text-sm text-foreground/60">
+          <h3 class="font-semibold text-lg text-background">{t('modelo', lang, `synergy.${key}.title`)}</h3>
+          <ul class="space-y-2 text-sm text-background/70">
             {t('modelo', lang, `synergy.${key}.items`).split(' · ').map((item: string) => (
               <li class="flex gap-2"><span class="text-primary">✓</span>{item}</li>
             ))}
@@ -204,13 +214,17 @@ const programs = ['vibe', 'agent', 'hackjam', 'workshops'];
 </section>
 
 <!-- CTA -->
-<section class="py-24 px-4 bg-muted cta-section">
+<section class="py-20 px-4">
   <div class="max-w-3xl mx-auto text-center space-y-8">
-    <h2 class="text-4xl sm:text-5xl font-medium">{t('modelo', lang, 'cta.title')}</h2>
-    <p class="text-xl text-foreground/60">{t('modelo', lang, 'cta.description')}</p>
-    <a href={CTA} target="_blank" rel="noopener" style="color: #ffffff !important;" class="inline-block bg-primary px-10 py-5 rounded-full font-bold text-lg hover:brightness-110 transition-all hover:scale-105 transform">
-      {t('modelo', lang, 'cta.button')}
-    </a>
-    <p class="text-foreground/50 text-sm">{t('modelo', lang, 'cta.email')}</p>
+    <div class="rounded-2xl bg-foreground p-10 md:p-14 space-y-6">
+      <h2 class="text-3xl md:text-4xl text-background font-semibold">
+        {t('modelo', lang, 'cta.title')}
+      </h2>
+      <p class="text-xl text-background/70">{t('modelo', lang, 'cta.description')}</p>
+      <a href={CTA} target="_blank" rel="noopener" style="color: #ffffff !important;" class="inline-block bg-primary px-10 py-5 rounded-full font-semibold text-lg hover:brightness-110 transition-all hover:scale-105 transform">
+        {t('modelo', lang, 'cta.button')}
+      </a>
+      <p class="text-background/50 text-sm">{t('modelo', lang, 'cta.email')}</p>
+    </div>
   </div>
 </section>
