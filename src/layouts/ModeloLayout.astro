@@ -1,0 +1,98 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+
+const { title, description, lang = 'es' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/images/logos/frutero-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Funnel+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="min-h-screen bg-background text-foreground">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60 no-print">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/modelo-educativo/" class="flex items-center gap-2 font-heading font-bold text-lg" style="color: var(--color-foreground) !important;">
+        <span>🍊</span> Modelo Educativo
+      </a>
+      <div class="flex items-center gap-6 text-sm font-semibold">
+        <a href="#journey" class="modelo-nav-link hidden sm:inline text-foreground/70 hover:text-primary transition-colors">{t('modelo', lang, 'nav.journey')}</a>
+        <a href="#methodology" class="modelo-nav-link hidden sm:inline text-foreground/70 hover:text-primary transition-colors">{t('modelo', lang, 'nav.methodology')}</a>
+        <a href="#okrs" class="modelo-nav-link hidden sm:inline text-foreground/70 hover:text-primary transition-colors">{t('modelo', lang, 'nav.okrs')}</a>
+        <a href="#collaboration" class="modelo-nav-link hidden sm:inline text-foreground/70 hover:text-primary transition-colors">{t('modelo', lang, 'nav.collaboration')}</a>
+        <a href="#programs" class="modelo-nav-link hidden sm:inline text-foreground/70 hover:text-primary transition-colors">{t('modelo', lang, 'nav.programs')}</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+    <slot />
+  </main>
+
+  <style>
+    /* Override global a { color: primary-dark } for nav and content */
+    nav a {
+      color: inherit;
+    }
+    nav a:hover {
+      color: inherit;
+    }
+    .modelo-nav-link {
+      color: oklch(0.0969 0 0 / 0.7) !important; /* foreground/70 */
+    }
+    .modelo-nav-link:hover {
+      color: var(--color-primary) !important;
+    }
+    .modelo-nav-link.active {
+      color: var(--color-primary) !important;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--color-primary);
+    }
+    /* CTA buttons: white text on primary bg */
+    .modelo-cta {
+      color: #ffffff !important;
+    }
+  </style>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.modelo-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${entry.target.id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+
+  <footer class="border-t border-border/60 py-8 no-print">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p class="text-foreground/30 text-xs">{t('modelo', lang, 'footer.copyright')}</p>
+    </div>
+  </footer>
+</body>
+</html>
